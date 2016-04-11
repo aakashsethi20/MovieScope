@@ -49,7 +49,7 @@ class Movie(models.Model):
 class MovieTopics(models.Model):
 	movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
 	topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
-	language = models.CharField(max_length=50)
+	language = models.CharField(max_length=50, default="English")
 	SUBTITLES_CHOICES = (
 		('Y', 'Yes'),
 		('N', 'No'),

@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from .models import Movie, Review
+from .models import Movie, Review, Topic, MovieTopics
 from .forms import ReviewForm
 
 import datetime
@@ -23,6 +23,27 @@ def movie_list(request):
 	context = {'movie_list': movie_list}
 	return render(request, 'reviews/movie_list.html', context)
 
+def topic_list(request):
+	topic_list = Topic.objects.order_by('description')
+	context = {'topic_list': topic_list}
+	return render(request, 'reviews/topic_list.html', context)
+
+def top10(request):
+	movies = Movie.objects.all()
+	ids = []
+	ratings = []
+	for x in movies:
+		ids.append(x.movie_id)
+		ratings.append(x.average_rating())
+	z = zip(ids, ratings)
+	z = sorted(z, key=lambda x: x[1])
+	top10_list = []
+	for x in z:
+		top10_list.append(Movie.objects.get(movie_id=x[0]))
+	context = {'movie_list': top10_list[:10]}
+	return render(request, 'reviews/movie_list.html', context)
+
+
 def movie_detail(request, movie_id):
 	movie = get_object_or_404(Movie, pk=movie_id)
 	form = ReviewForm()
@@ -37,6 +58,15 @@ def movie_detail(request, movie_id):
 		'form': form,
 	}
 	return render(request, 'reviews/movie_detail.html', context)
+
+def topic_movie_list(request, topic_id):
+	topic = get_object_or_404(Topic, pk=topic_id)
+	movie_list = MovieTopics.objects.filter(topic=topic_id)
+	movie_ids = []
+	for x in movie_list:
+		movie_ids.append(x.movie)
+	context = {'movie_list': movie_ids}
+	return render(request, 'reviews/movie_list.html', context)
 
 @login_required
 def add_review(request, movie_id):

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<h2>Genres</h2>
+{% endblock %}
+
+{% block content %}
+{% if topic_list %}
+<div class="row">
+    {% for topic in topic_list %}
+    <div class="col-xs-6 col-lg-4">
+        <h4><a href="{% url 'reviews:topic_movies' topic.topic_id %}">
+        {{ topic.description }}
+        </a></h4>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+    <p>No genres are available.</p>
+{% endif %}
+{% endblock %}
