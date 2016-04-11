@@ -7,7 +7,7 @@
 <div class="container">
     <nav class="navbar navbar-default">
         <div class="navbar-header">
-            <a class="navbar-brand" href="{% url 'reviews:review_list' %}">MovieScope</a>
+            <a class="navbar-brand" href="{% url 'reviews:movie_list' %}">MovieScope</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -17,7 +17,7 @@
             <ul class="nav navbar-nav navbar-right">
             {% if user.is_authenticated %}
                 <li><a href="{% url 'reviews:user_review_list' user.username %}">Hello {{ user.username }}</a></li>
-                <!-- <li><a href="{% url 'reviews:user_recommendation_list' %}">Movie suggestions</a></li> -->
+                <li><a href="{% url 'reviews:user_recommendation_list' %}">Movie suggestions</a></li>
                 <li><a href="{% url 'auth:logout' %}">Logout</a></li>
             {% else %}
                 <li><a href="{% url 'auth:login' %}">Login</a></li>

@@ -23,9 +23,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'gkebr89@+3*74a+y6aputp50&f1y1+bk^md$14@^dutnkh78a6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '*'
+]
 
 
 # Application definition
@@ -39,7 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'reviews',
     'bootstrap3',
+    'registration',
 ]
+
+ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window
+REGISTRATION_AUTO_LOGIN = True # Automatically log the user in.
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
@@ -53,6 +59,8 @@ MIDDLEWARE_CLASSES = [
 ]
 
 ROOT_URLCONF = 'moviescope.urls'
+
+LOGIN_REDIRECT_URL = '/review/user'
 
 TEMPLATES = [
     {

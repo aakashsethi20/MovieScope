@@ -29,7 +29,7 @@
 <h3>Add your review</h3>
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<form action="{% url 'reviews:add_review' movie.movie_id %}" method="post" class="form">
+<form action="{% url 'reviews:add_review' movie_id %}" method="post" class="form">
     {% csrf_token %}
     {% bootstrap_form form layout='inline' %}
     {% buttons %}
