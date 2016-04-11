@@ -1,0 +1,224 @@
+user_name,comment,rating,movie_id
+aakash,excellent,5,1
+minty,cool,4,1
+toffee,superb!,5,1
+charlotte,Awesome!,5,1
+harjot,shitty movie,1,1
+karun,good!,4,1
+prince,good,4,1
+tarun,not so good,2,1
+kpsm,okay!,3,1
+aakash,okay!,3,2
+minty,cool,4,2
+toffee,superb!,5,2
+charlotte,Awesome!,4,2
+harjot,shitty movie,2,2
+karun,good!,5,2
+prince,good,3,2
+tarun,not so good,3,2
+kpsm,okay!,3,2
+aakash,poor,4,2
+minty,cool,4,3
+toffee,superb!,5,3
+charlotte,ok!,2,3
+karun,could have been better,2,4
+prince,poor,1,4
+tarun,not so good,2,4
+kpsm,okay!,3,4
+aakash,nice movie,4,5
+minty,poor,1,5
+toffee,not really good!,3,5
+aakash,excellent,5,6
+minty,cool,4,6
+toffee,superb!,5,6
+charlotte,Awesome!,5,6
+harjot,shitty movie,1,6
+karun,good!,4,6
+prince,good,4,6
+tarun,poor,2,6
+kpsm,ook,3,6
+aakash,fair,3,7
+minty,cool,5,7
+toffee,okayy,3,7
+karun,poorly directed,1,8
+prince,good,5,8
+tarun,not so good,3,8
+kpsm,okay!,4,8
+aakash,all time fav,5,9
+minty,not bad,3,9
+toffee,i liked it,4,9
+charlotte,Awesome!,5,10
+harjot,simply awesome!!!!,5,10
+karun,bad movie,1,10
+aakash,bad movie,1,11
+minty,ok,2,11
+toffee,bad,1,11
+charlotte,Awesome!,5,12
+harjot,awesomeee movie,5,12
+karun,good!,4,12
+prince,good,5,12
+tarun,awesome,5,12
+kpsm,loved it!,5,12
+aakash,okay,2,13
+minty,cool,3,13
+toffee,superb!,5,13
+charlotte,Awesome!,5,14
+harjot,shitty movie,1,14
+karun,good!,4,14
+prince,good,4,14
+tarun,not so good,2,15
+kpsm,okay!,3,15
+aakash,could have been better,3,16
+minty,okk,2,16
+toffee,bad movie,1,16
+charlotte,Awesome!,5,17
+harjot,shitty movie,1,17
+karun,fair,3,18
+prince,good,2,18
+tarun,not so good,2,18
+kpsm,okay!,3,19
+aakash,excellent,5,19
+minty,cool,4,19
+toffee,nice,4,20
+charlotte,I liked it,4,20
+harjot,shitty movie,1,20
+karun,good!,4,21
+prince,good,4,21
+tarun,loved it,4,21
+kpsm,okay!,3,22
+aakash,excellent,5,22
+minty,cool,4,22
+toffee,superb!,5,23
+charlotte,Awesome!,5,23
+harjot,shitty movie,1,23
+karun,good!,4,24
+prince,good,4,24
+tarun,good,5,24
+kpsm,okay!,3,25
+aakash,hate it,1,26
+minty,bad,1,26
+toffee,okay!,3,26
+charlotte,Awesome!,5,27
+harjot,shitty movie,1,27
+karun,good!,4,28
+prince,good,4,28
+tarun,good,5,28
+kpsm,good one,4,29
+prince,good,4,29
+tarun,not so good,2,29
+kpsm,okay!,3,30
+aakash,could have been better,3,30
+toffee,not really good!,3,30
+aakash,excellent,5,31
+minty,bad movie,1,31
+toffee,fine,3,31
+kpsm,okay!,3,32
+aakash,nice movie,4,32
+minty,poor,1,32
+toffee,not really good!,3,33
+aakash,excellent,5,33
+minty,cool,4,33
+toffee,okayy,3,34
+aakash,fine,3,34
+karun,awesome,5,34
+aakash,loved it,5,35
+harjot,nice movie,5,35
+charlotte,perfect,5,35
+aakash,could have been better,3,36
+toffee,not really good!,3,36
+aakash,excellent,5,36
+aakash,could have been better,3,37
+toffee,not really good!,3,37
+aakash,okay,2,37
+aakash,all time fav,5,38
+minty,not bad,3,38
+toffee,i liked it,4,38
+aakash,all time fav,5,39
+minty,not bad,3,39
+toffee,i liked it,4,39
+aakash,all time fav,5,40
+minty,not bad,3,40
+toffee,i liked it,4,40
+aakash,all time fav,5,41
+minty,not bad,4,41
+toffee,i liked it,5,41
+minty,cool,4,42
+toffee,superb!,5,42
+charlotte,Awesome!,4,42
+minty,cool,4,43
+toffee,superb!,5,43
+charlotte,Awesome!,4,43
+minty,cool,4,44
+toffee,superb!,5,44
+charlotte,Awesome!,4,44
+toffee,superb!,5,45
+charlotte,Awesome!,5,45
+harjot,shitty movie,1,45
+toffee,superb!,5,46
+charlotte,Awesome!,5,46
+harjot,shitty movie,1,46
+toffee,superb!,5,47
+charlotte,Awesome!,5,47
+harjot,shitty movie,1,47
+kpsm,okay!,3,48
+aakash,excellent,5,48
+minty,cool,4,48
+kpsm,okay!,3,49
+aakash,excellent,5,49
+minty,cool,4,49
+kpsm,okay!,3,50
+aakash,excellent,5,50
+minty,cool,4,50
+kpsm,okay!,3,51
+aakash,excellent,5,51
+minty,cool,4,51
+kpsm,okay!,3,52
+aakash,excellent,5,52
+minty,cool,4,52
+toffee,awesome!,5,53
+aakash,excellent,5,53
+minty,cool,5,53
+toffee,superb!,5,54
+charlotte,Awesome!,5,54
+harjot,shitty movie,1,54
+toffee,superb!,5,55
+charlotte,Awesome!,5,55
+harjot,shitty movie,1,55
+prince,good,4,56
+tarun,good,5,56
+kpsm,okay!,3,56
+prince,good,4,57
+tarun,good,5,57
+kpsm,okay!,3,57
+toffee,superb!,5,58
+charlotte,Awesome!,4,58
+minty,cool,4,58
+toffee,superb!,5,59
+charlotte,Awesome!,4,59
+minty,cool,4,59
+toffee,superb!,5,60
+charlotte,Awesome!,4,60
+minty,cool,4,60
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

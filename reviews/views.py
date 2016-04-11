@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from .models import Movie, Review, Topic, MovieTopics
+from .models import Movie, Review, Topic, MovieTopics, Actor, ActorPlays, Role, Director, Directs
 from .forms import ReviewForm
 
 import datetime
@@ -30,32 +30,27 @@ def topic_list(request):
 
 def top10(request):
 	movies = Movie.objects.all()
-	ids = []
-	ratings = []
-	for x in movies:
-		ids.append(x.movie_id)
-		ratings.append(x.average_rating())
-	z = zip(ids, ratings)
-	z = sorted(z, key=lambda x: x[1])
-	top10_list = []
-	for x in z:
-		top10_list.append(Movie.objects.get(movie_id=x[0]))
-	context = {'movie_list': top10_list[:10]}
+	movies =  sorted(movies, key=lambda x: x.average_rating, reverse=True)
+	context = {'movie_list': movies[:10]}
 	return render(request, 'reviews/movie_list.html', context)
 
 
 def movie_detail(request, movie_id):
 	movie = get_object_or_404(Movie, pk=movie_id)
+	actor_list = ActorPlays.objects.filter(movie=movie_id)
+	director_list = Directs.objects.filter(movie=movie_id)
+	director_ids = []
+	actor_ids = []
+	for x in actor_list:
+		actor_ids.append(x.actor)
+	for y in director_list:
+		director_ids.append(y.director)
 	form = ReviewForm()
 	context = {
 		'movie': movie,
-		'movie_id': movie.movie_id,
-		'name': movie.name,
-		'trailer': movie.trailer_url,
-		'poster': movie.poster_url,
-		'date_released': movie.date_released,
-		'topics': movie.topics,
 		'form': form,
+		'actor_list': actor_ids,
+		'director_list': director_ids,
 	}
 	return render(request, 'reviews/movie_detail.html', context)
 
@@ -67,6 +62,24 @@ def topic_movie_list(request, topic_id):
 		movie_ids.append(x.movie)
 	context = {'movie_list': movie_ids}
 	return render(request, 'reviews/movie_list.html', context)
+
+def actor_movie_list(request, actor_id):
+	actor = get_object_or_404(Actor, pk=actor_id)
+	movie_list = ActorPlays.objects.filter(actor=actor_id)
+	movie_ids = []
+	for x in movie_list:
+		movie_ids.append(x.movie)
+	context = {'movie_list': movie_ids, 'actor': actor}
+	return render(request, 'reviews/actor_movie_list.html', context)
+
+def director_movie_list(request, director_id):
+	director = get_object_or_404(Director, pk=director_id)
+	movie_list = Directs.objects.filter(director=director_id)
+	movie_ids = []
+	for x in movie_list:
+		movie_ids.append(x.movie)
+	context = {'movie_list': movie_ids, 'director': director}
+	return render(request, 'reviews/director_movie_list.html', context)
 
 @login_required
 def add_review(request, movie_id):

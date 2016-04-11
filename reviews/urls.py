@@ -12,5 +12,7 @@ urlpatterns = [
 	url(r'^recommendation/$', views.user_recommendation_list, name='user_recommendation_list'),
 	url(r'^topic/$', views.topic_list, name="topic_list"),
 	url(r'^topic/(?P<topic_id>[0-9]+)/$', views.topic_movie_list, name='topic_movies'),
-	url(r'^top10/$', views.top10, name='top10')
+	url(r'^top10/$', views.top10, name='top10'),
+	url(r'^actor/(?P<actor_id>[0-9]+)/$', views.actor_movie_list, name='actor_movie_list'),
+	url(r'^director/(?P<director_id>[0-9]+)/$', views.director_movie_list, name='director_movie_list'),
 ]

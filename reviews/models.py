@@ -3,6 +3,7 @@ from django.db import models
 import numpy as np
 from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator, MaxValueValidator
+import datetime
 
 # Create your models here.
 class Topic(models.Model):
@@ -22,7 +23,7 @@ class Review(models.Model):
         (5, '5'),
     )
     movie = models.ForeignKey('Movie', on_delete=models.CASCADE)
-    pub_date = models.DateTimeField('date published')
+    pub_date = models.DateTimeField('date published', default=datetime.datetime.now())
     user_name = models.CharField(max_length=100)
     comment = models.CharField(max_length=200)
     rating = models.IntegerField(choices=RATING_CHOICES)
@@ -30,7 +31,7 @@ class Review(models.Model):
 class Movie(models.Model):
 	movie_id = models.AutoField(primary_key=True)
 	name = models.CharField("Movie's name", max_length=70, unique=True)
-	trailer_url = models.URLField("Movie's Trailer", default="https://www.youtube.com/")
+	trailer_url = models.URLField("Movie's Trailer", default="")
 	poster_url = models.URLField("Movie's Poster", default="")
 	date_released = models.DateField("Movie's Release Date")
 	topics = models.ManyToManyField(Topic, through='MovieTopics')
@@ -54,7 +55,7 @@ class MovieTopics(models.Model):
 		('Y', 'Yes'),
 		('N', 'No'),
 	)
-	subtitles = models.CharField(max_length=1, choices=SUBTITLES_CHOICES)
+	subtitles = models.CharField(max_length=1, choices=SUBTITLES_CHOICES, default='N')
 
 	class Meta:
 		db_table = "MovieTopics"

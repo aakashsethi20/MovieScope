@@ -1,0 +1,7 @@
+{% extends 'reviews/movie_list.html' %}
+
+{% block title %}
+{% if actor %}
+<h2>Movies by {{ actor.first_name }}  {{ actor.last_name }}</h2>
+{% endif %}
+{% endblock %}

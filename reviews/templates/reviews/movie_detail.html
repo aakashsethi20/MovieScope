@@ -2,12 +2,41 @@
 {% load bootstrap3 %}
 
 {% block title %}
-<img src="{{ movie.poster_url }}" height="150" width="100">
+<div class="row">
+    <div class="col-lg-2 col-lg-2">
+        <img src="{{ movie.poster_url }}" height="300" width="200">
+    </div>
+    <div class="col-lg-2 col-lg-2">
+        <iframe style="margin-left: 200px" width="500" height="350" src="{{ movie.trailer_url }}" allowfullscreen></iframe>
+    </div>
+</div>
 <h2>{{ movie.name }}</h2>
 <h5>{{ movie.review_set.count }} reviews ({{ movie.average_rating | floatformat }} average rating)</h5>
 {% endblock %}
 
 {% block content %}
+<h3>Starring:</h3>
+{% if actor_list %}
+<div class="row">
+    {% for actor in actor_list %}
+    <div class="col-xs-6 col-lg-4">
+        <h4><a href="{% url 'reviews:actor_movie_list' actor.actor_id %}">{{ actor.first_name }} {{ actor.last_name }}</a></h4>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+<br>
+<h3>Directed by:</h3>
+{% if director_list %}
+<div class="row">
+    {% for director in director_list %}
+    <div class="col-xs-6 col-lg-4">
+        <h4><a href="{% url 'reviews:director_movie_list' director.director_id %}">{{ director.first_name }} {{ director.last_name }}</a></h4>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+<br>
 <h3>Recent reviews</h3>
 
 {% if movie.review_set.all %}
@@ -29,7 +58,7 @@
 <h3>Add your review</h3>
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<form action="{% url 'reviews:add_review' movie_id %}" method="post" class="form">
+<form action="{% url 'reviews:add_review' movie.movie_id %}" method="post" class="form">
     {% csrf_token %}
     {% bootstrap_form form layout='inline' %}
     {% buttons %}
