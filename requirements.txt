@@ -5,3 +5,4 @@ psycopg2==2.6.1
 whitenoise==2.0.6
 numpy==1.11.0
 pandas==0.18.0
+bootstrap3==3.3.6
